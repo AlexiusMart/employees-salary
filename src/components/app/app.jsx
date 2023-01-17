@@ -44,19 +44,15 @@ class App extends Component {
         })
     }
 
-    onTogglePremium = (id) => {
+    onToggleProp = (id, prop) => {
         this.setState(({data}) => ({
             data: data.map(elem => {
                 if (elem.id === id) {
-                    return {...elem, premium: !elem.premium}
+                    return {...elem, [prop]: !elem[prop]}
                 }
                 return elem
             })
         }))
-    }
-
-    onToggleLike = (id) => {
-        console.log(`Like this ${id}`)
     }
     
     render() {
@@ -76,8 +72,7 @@ class App extends Component {
                 <EmployeesList
                     data={this.state.data}
                     onDelete={this.deleteItem}
-                    onTogglePremium={this.onTogglePremium}
-                    onToggleLike={this.onToggleLike} />
+                    onToggleProp={this.onToggleProp} />
     
                 <EmployeesAddForm onAdd={this.addItem} />
             </div>
