@@ -6,7 +6,7 @@ const EmployeesList = ({data, onDelete}) => {
 
     const elements = data.map(elem => {
         const {id, ...elemProps} = elem
-        
+
         return (
             <EmployeesListItem
                 key={id}
