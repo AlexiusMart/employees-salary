@@ -60,9 +60,13 @@ class App extends Component {
     }
     
     render() {
+        const sumEmp = this.state.data.length;
+        const sumPremEmp = this.state.data.filter(item => item.premium).length;
         return (
             <div className="app">
-                <AppInfo />
+                <AppInfo
+                    sumEmp={sumEmp}
+                    sumPremEmp={sumPremEmp} />
     
                 <div className="search-panel">
                     <SearchPanel />
