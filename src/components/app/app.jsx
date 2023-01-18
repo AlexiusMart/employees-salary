@@ -85,7 +85,7 @@ class App extends Component {
     onFilterChange = (filter) => {
         this.setState({filter})
     }
-    
+
     render() {
         const {data, term, filter} = this.state
         const sumEmp = this.state.data.length;
